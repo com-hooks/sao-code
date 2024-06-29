@@ -1,0 +1,45 @@
+{
+  "name": "sao-code",
+  "version": "0.4.0",
+  "description": "",
+  "module": "module",
+  "scripts": {
+    "dev": "rspack serve --mode=development",
+    "library": "rspack build --mode=production --config rspack.library.config.js",
+    "dts:ed": "tsc --emitDeclarationOnly",
+    "dts": "tsc --watch",
+    "build:tsc": "tsc",
+    "lib": "npm run library && npm run dts"
+  },
+  "keywords": [
+    "Polyfill",
+    "Vue",
+    "javascript",
+    "js",
+    "骚代码",
+    "prototype"
+  ],
+  "author": "",
+  "license": "none",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/com-hooks/sao-code"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^0.7.4",
+    "@rspack/core": "^0.7.4",
+    "@types/lodash": "^4.17.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2",
+    "vue": "^3.4.31",
+    "vue-loader": "^17.4.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
