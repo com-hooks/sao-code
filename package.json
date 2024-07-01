@@ -1,6 +1,6 @@
 {
   "name": "sao-code",
-  "version": "0.5.2",
+  "version": "0.5.5",
   "description": "Polyfill 补充、添加、填充、衣物、增加、js、骚",
   "module": "module",
   "scripts": {
@@ -25,7 +25,6 @@
   "license": "none",
   "files": [
     "dist",
-    "images",
     "package.json",
     "README.md"
   ],

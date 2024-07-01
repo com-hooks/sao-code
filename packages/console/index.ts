@@ -13,7 +13,7 @@ const des = '           🐵  🐒   😺  🐺' + '\n'
 export default {
     install() {
         console.log(des);
-        console.groupCollapsed(chalk.blue.bold('开心一下 😹'));
+        console.groupCollapsed(chalk.blue.bold('阅读一刻 🐧'));
         console.log(chalk.underline.bold(happyMessageList.join('\n\n')));
         console.groupEnd();
         new SLog().install();
