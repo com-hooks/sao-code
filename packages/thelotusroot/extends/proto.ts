@@ -19,8 +19,17 @@ class ToProtoType {
         this.selfs.forEach(item => {
             try {
                 const target = typeof item === 'function' && item?.name !== 'Promise' ? item.prototype : item;
-                // @ts-ignore
-                (Reflect.get(target, this._name) === void 0) && (Reflect.set(target, this._name, this.setup));
+                 // @ts-ignore
+                if(Reflect.get(target, this._name) === void 0) {
+                     // @ts-ignore
+                    Object.defineProperty(target, this._name, {
+                         // @ts-ignore
+                        value: this.setup,
+                        enumerable: false,
+                        configurable: false,
+                        writable: true,
+                    })
+                }
             } catch (err) {
                 console.error(err);
             }
