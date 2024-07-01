@@ -9,9 +9,10 @@ export class WithResolves extends ToProtoType {
         return 'withResolvers';
     }
     setup() {
-        let resolve,
-            reject;
-        let promise = new Promise((...arg) => ([resolve, reject] = arg));
+        let resolve = Promise.resolve,
+            reject = Promise.reject;
+        // @ts-ignore
+        let promise = new Promise<any>((...arg) => ([resolve, reject] = arg));
         return {
             promise,
             resolve,
