@@ -1,6 +1,16 @@
 ## sao code
 ## Polyfill 补充、添加、填充、衣物、增加、js、骚
 
+### Style Console
+
+- 搞怪风格log打印，让枯燥的上班时间添加乐趣
+![console.log](./images/console.log.png)
+
+```ts
+import SConsole from 'sao-code/dist/core/console';
+SConsole.install();
+```
+
 ### thelotusroot
 - 统一注册 thelotusroot 相关函数 （或者使用下面的单文件注册）
 

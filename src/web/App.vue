@@ -4,7 +4,11 @@
     </div>
 </template>
 <script setup lang="ts">
-import thelotusroot from '../../dist/core/thelotusroot';
-thelotusroot.install();
 
+console.log( {
+    name: 'httaa'
+})
+
+
+console.log('httaa')
 </script>
