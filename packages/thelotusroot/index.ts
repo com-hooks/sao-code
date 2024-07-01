@@ -10,7 +10,7 @@ import { ProtoCopyEffect } from './copyEffect';
 import { ProtoCatch } from './catch';
 
 export default {
-    install(wran = true) {
+    install(wran = false) {
         ProtoArray.install(undefined, wran);
         new ProtoClone().install(wran);
         new ProtoOmit().install(wran);

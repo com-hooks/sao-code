@@ -8,8 +8,14 @@ class ToProtoType {
         return 'toCloned';
     }
     install(wran = true) {
-        // @ts-ignore
-        wran && this.selfs?.length && console.warn(`已给${this.selfs.map(item => String(item))} prototype添加 ${this._name} 根据需求判断是否注册使用`);
+
+        if (wran) {
+            console.groupCollapsed('不看就不看👓');
+            // @ts-ignore
+            this.selfs?.length && console.warn(`已给${this.selfs.map(item => String(item))} prototype添加 ${this._name} 根据需求判断是否注册使用`);
+            console.groupEnd();
+        }
+
         this.selfs.forEach(item => {
             try {
                 const target = typeof item === 'function' && item?.name !== 'Promise' ? item.prototype : item;

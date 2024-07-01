@@ -1,7 +1,7 @@
 {
   "name": "sao-code",
-  "version": "0.4.0",
-  "description": "",
+  "version": "0.5.2",
+  "description": "Polyfill 补充、添加、填充、衣物、增加、js、骚",
   "module": "module",
   "scripts": {
     "dev": "rspack serve --mode=development",
@@ -17,18 +17,22 @@
     "javascript",
     "js",
     "骚代码",
-    "prototype"
+    "prototype",
+    "console",
+    "log"
   ],
   "author": "",
   "license": "none",
   "files": [
     "dist",
+    "images",
     "package.json",
     "README.md"
   ],
   "repository": {
     "type": "github",
-    "url": "https://github.com/com-hooks/sao-code"
+    "url": "https://github.com/com-hooks/sao-code",
+    "directory": "packages"
   },
   "devDependencies": {
     "@rspack/cli": "^0.7.4",
@@ -40,6 +44,7 @@
     "vue-loader": "^17.4.2"
   },
   "dependencies": {
+    "chalk": "^5.3.0",
     "lodash": "^4.17.21"
   }
 }
