@@ -4,7 +4,7 @@
 ### Style Console
 
 - 搞怪风格log打印，让枯燥的上班时间添加乐趣
-![console.log](./images/console.log.png)
+![console.log](https://github.com/com-hooks/sao-code/raw/fix-code-mmj/images/1719823821157.jpg)
 
 ```ts
 import SConsole from 'sao-code/dist/core/console';
