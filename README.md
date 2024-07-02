@@ -8,7 +8,15 @@
 - ![log](https://github.com/com-hooks/sao-code/assets/67493191/6a19ca21-b365-4426-9e24-4f668844d277)
 - ![image](https://github.com/com-hooks/sao-code/assets/67493191/8f0876f6-b042-4570-b041-e48abd550370)
 
-
+- vue 中显示熊二
+```ts
+import { errorEvent } from 'sao-code/dist/core/console/error';
+   // vue2 错误事件捕获了， 只有这样熊二才会出来的
+  Vue.config.errorHandler = (err) => {
+    console.error(err);
+    errorEvent();
+  };
+```
 ```ts
 import SConsole from 'sao-code/dist/core/console';
 SConsole.install();
