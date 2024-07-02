@@ -25,8 +25,8 @@ export function useEventError() {
 function useRequestIdlcallback() {
     window.requestIdleCallback((IdleRequestCallback) => {
         const timeRemaining = IdleRequestCallback.timeRemaining();
-        if(IdleRequestCallback.didTimeout || timeRemaining <= 5) {
-            errorEvent('写的什么玩意啊，渲染速度不咋样， 渲染剩余时间：'+ timeRemaining + '毫秒');
+        if (IdleRequestCallback.didTimeout || timeRemaining <= 5) {
+            errorEvent('写的什么玩意啊，渲染速度不咋样， 渲染剩余时间：' + timeRemaining + '毫秒');
         }
         setTimeout(() => {
             useRequestIdlcallback();
@@ -38,7 +38,7 @@ export function errorEvent(msg: string) {
     setTimeout(() => {
         // @ts-ignore
         views[0].children[0].src = getRandomVal(base64ImageList);
-         views[0].children[1].innerHTML = `
+        views[0].children[1].innerHTML = `
             <div style="color: dodgerblue;font-weight: bold;margin-top: 10px">${msg ?? '哈哈哈'}</div>
             `;
         views[0].style.transform = 'translate(0%, 0%)';
@@ -78,4 +78,12 @@ function renderImg() {
         errorEvent('我是熊二，看你写bug的');
     }, 1000);
     return contianerTips;
+}
+
+/**
+ * 添加标签包图片源
+ * @param list 
+ */
+export function pushImageSource(list: string[] = []) {
+    base64ImageList.push(...list);
 }

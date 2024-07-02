@@ -25,6 +25,16 @@ import { errorEvent } from 'sao-code/dist/core/console/error';
 import SConsole from 'sao-code/dist/core/console';
 SConsole.install();
 ```
+- 可以通过 pushImageSource 自定义添加一些表情图片
+```ts
+declare const base64ImageList: string[];  // http://xxxx/ 或者 base64
+import { pushImageSource } from 'sao-code/dist/core/console/error';
+
+pushImageSource([
+    // 'http://xxxx///xxxx', 
+]);
+
+```
 
 ### thelotusroot
 - 统一注册 thelotusroot 相关函数 （或者使用下面的单文件注册）

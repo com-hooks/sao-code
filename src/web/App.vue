@@ -5,7 +5,7 @@
 </template>
 <script setup lang="ts">
 
-console.log( a, {
+console.log( {
     name: 'httaa'
 })
 
