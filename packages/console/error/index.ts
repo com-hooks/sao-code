@@ -1,13 +1,15 @@
 
 const views: HTMLDivElement[] = [];
+const errorTipMsg = '呦呦呦，又报错了';
 
 /**
  * @desc 监听全局error事件
  */
 export function useEventError() {
-    window.removeEventListener('error', errorEvent, true);
-    window.addEventListener('error', errorEvent, true);
-    
+    const eventHandler = errorEvent.bind(window, errorTipMsg);
+    window.removeEventListener('error', eventHandler, true);
+    window.addEventListener('error', eventHandler, true);
+    useRequestIdlcallback();
     views.forEach(div => {
         try {
             div.remove();
@@ -18,13 +20,28 @@ export function useEventError() {
     views.push(renderImg());
 }
 
-export function errorEvent() {
+function useRequestIdlcallback() {
+    window.requestIdleCallback((IdleRequestCallback) => {
+        const timeRemaining = IdleRequestCallback.timeRemaining();
+        if(IdleRequestCallback.didTimeout || timeRemaining <= 5) {
+            errorEvent('写的什么玩意啊，渲染速度不咋样， 渲染剩余时间：'+ timeRemaining);
+        }
+        setTimeout(() => {
+            useRequestIdlcallback();
+        }, 4000);
+    });
+}
+
+export function errorEvent(msg: string) {
     setTimeout(() => {
+         views[0].children[1].innerHTML = `
+            <div style="color: dodgerblue;font-weight: bold;">${msg}</div>
+            `;
         views[0].style.transform = 'translate(0%, 0%)';
         setTimeout(() => {
             views[0].style.transform = 'translate(-120%, 0%)';
         }, 3000);
-    }, 500)
+    }, 500);
 }
 
 function renderImg() {
@@ -53,5 +70,8 @@ function renderImg() {
     contianerTips.ondblclick = function () {
         contianerTips.style.transform = 'translate(-120%, 0%)';
     }
+    setTimeout(() => {
+        errorEvent('我是熊二，看你写bug的');
+    }, 1000);
     return contianerTips;
 }

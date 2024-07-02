@@ -5,7 +5,7 @@
 </template>
 <script setup lang="ts">
 
-console.log(a, {
+console.log( {
     name: 'httaa'
 })
 
@@ -43,5 +43,7 @@ console.log('Array',
 console.log('httaa')
 </script>
 <style>
-
+div {
+    color: dodgerblue;
+}
 </style>
