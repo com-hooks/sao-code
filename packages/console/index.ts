@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import { SLog } from './log';
 import { happyMessageList } from './const/message';
+import { useEventError } from './error';
 
 const des = '           🐵  🐒   😺  🐺' + '\n'
     + '         🙊                 🐫' + '\n' +
@@ -17,5 +18,6 @@ export default {
         console.log(chalk.underline.bold(happyMessageList.join('\n\n')));
         console.groupEnd();
         new SLog().install();
+        useEventError();
     },
 }
