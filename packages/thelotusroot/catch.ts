@@ -9,10 +9,10 @@ class ProtoCatch extends ToProtoType {
     get _name() {
         return 'catch';
     }
-    setup(...arg: any[]) {
+    async setup(...arg: any[]) {
         if (typeof this !== 'function') return this;
         try {
-            return (this as Function).apply(this, arg);
+            return await (this as Function).apply(this, arg);
         } catch (err) {
             window.console.log(err);
             return {
