@@ -1,5 +1,5 @@
 import { ToProtoType } from './extends/proto';
-import { Dictionary, ValueKeyIterateeTypeGuard, pickBy } from 'lodash';
+import { pickBy } from 'lodash';
 
 class ProtoPickBy extends ToProtoType {
     constructor(selfs = [Object]) {
@@ -9,8 +9,14 @@ class ProtoPickBy extends ToProtoType {
     get _name() {
         return 'toPickByed';
     }
-    setup<T extends Dictionary<T>, K extends T>(object: T, predicate: ValueKeyIterateeTypeGuard<T, K>) {
-        return pickBy(object, predicate);
+    setup(...args: any[]) {
+        if (!args.length) return this;
+        if (args.length === 1) {
+            return pickBy(this, args[0]);
+        }
+        if (args.length > 1) {
+            return pickBy(args[0], args[1]);
+        }
     }
 }
 export {

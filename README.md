@@ -271,6 +271,13 @@ new ProtoPickBy().install(wran);
     original.toOmited();
     original.toPickByed();
     original.toPicked();
+
+    // ({name: '1', age: 2}).toPicked()
+    //  输出： {name: '1', age: 2}
+    // ({name: '1', age: 2}).toPicked(['name'])
+    // 输出：{name: '1'}
+    // Object.toPicked({name: '1', age: 2}, ['name'])
+    // 输出：{name: '1'}
 ```
 
 #### copyEffect
