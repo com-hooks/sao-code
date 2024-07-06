@@ -10,8 +10,14 @@ class ProtoOmit extends ToProtoType {
     get _name() {
         return 'toOmited';
     }
-    setup<T extends object, K extends string[]>(object: T, paths: K) {
-        return omit(object, paths);
+    setup(...args: any[]) {
+        if (!args.length) return this;
+        if (args.length === 1) {
+            return omit(this, args[0]);
+        }
+        if (args.length > 1) {
+            return omit(args[0], args[1]);
+        }
     }
 }
 export {
