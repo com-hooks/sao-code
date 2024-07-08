@@ -8,6 +8,8 @@ import { WithResolves } from './withResolves';
 import { ProtoArray } from './array';
 import { ProtoCopyEffect } from './copyEffect';
 import { ProtoCatch } from './catch';
+import { ProtoPipe } from './pipe';
+import { ProtoCompose } from './compose';
 
 export default {
     install(wran = false) {
@@ -21,6 +23,8 @@ export default {
         new WithResolves().install(wran);
         new ProtoCopyEffect().install(wran);
         new ProtoCatch().install(wran);
+        new ProtoPipe().install(wran);
+        new ProtoCompose().install(wran);
     },
 }
 
