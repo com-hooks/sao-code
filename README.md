@@ -175,6 +175,30 @@ test.catch(); // 报错了， 打印、返回捕获， 继续执行代码
  */
 ```
 
+### Compose and Pipe
+```ts
+function f1(x) {
+    return 1 + x;
+}
+function f2(x) {
+    return x * 2
+}
+
+// 平常调用
+const result = f1(f2(1));
+// result => 3
+
+// 使用 compose 从右到左
+const composeline = Object.compose(f1, f2);
+composeline(1);
+// result => 3
+
+// 使用 pipe 从左到右
+const pipeline = Object.pipe(f1, f2);
+pipeline(1);
+// result => 4
+```
+
 #### array Polyfill 兼容浏览器
 ```ts
 declare Array.prototype.toReversed();
