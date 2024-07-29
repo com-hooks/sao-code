@@ -10,8 +10,6 @@
 
 - vue 中显示熊二
 - ![image](https://github.com/com-hooks/sao-code/assets/67493191/01b2c465-959a-4de3-83a6-1cb77fd594e9)
-- ![image](https://github.com/com-hooks/sao-code/assets/67493191/6acb29ae-a140-4726-ac8c-d21aebd26da2)
-- ![image](https://github.com/com-hooks/sao-code/assets/67493191/87bc07c2-f0d5-4a44-a6d4-a4e836a392f1)
 
 ```ts
 import { errorEvent } from 'sao-code/dist/core/console/error';
